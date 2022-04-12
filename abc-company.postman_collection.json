@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "88242cd3-0c58-4ef8-b5cc-0ad2c6583dd1",
+		"name": "abc-company",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"customer1@abc-company.com\",\n  \"password\": \"testpassword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/login_check",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDk3MzYyNzMsImV4cCI6MTY0OTczOTg3Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY3VzdG9tZXIxQGFiYy1jb21wYW55LmNvbSJ9.AgF8XsY3YxeDYVolq3G-Bc_avyCKLkypP5NnEIsdnlz_YDPpdEnhZq-5AS7Cni88nOkR9w_AzXEld8cjyw1OSYy8RUHYJp0WfcCuuQkWdnynlMmhuWHtws6C9Pbn4ZuWpTZ0eUemOkXXTCfCFc0Io79CuoXca9lhCwlS37aolmTKYqfa5OpE4fVkTJeH4uGy7C01VSqi_XifRNhzNavdkKn6GW7b1sj-RNxxb04SujeLjRpwYVBGLwbeBtCH0dYFbUswPoe8LgDBqq3yvP7QS181afK5ziOAqw1a9XCHn_Qb9C36xxfRiSg8KAgTg83UBKigLjS5LkiBOnjLRFYilVQC6RfUPnpOoJ2NKtDzKJxKPLrGrhQImBuCof6g6YzahwvacLudI8yqKfbiIu_OrIV4N_I9LFYk8fUgN_9qPy8cIjoSBO-EKMpbk5GfEZQDAjVSXtZka80M8IPxB_0ibgflPhPs9_vnBkldKQoII2yrAPLPJ0ugWcUk7Mvm9A8F8MxZwodS6wQjsAkbvz7aI5-Yh3rm9g9iTAzcjadHnCGclib7wxi7P73MjizSjrddXY98dMyu4T_IodHjelaGBF6alofFqBAZAz7VftvJQCpNA_n9Ei4nz61H_-AvvawdxJcnGdZbseffycMoyudKxqlVppvT7mVOjgotYUox0Ks",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "turkey",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDk3MzYyNzMsImV4cCI6MTY0OTczOTg3Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY3VzdG9tZXIxQGFiYy1jb21wYW55LmNvbSJ9.AgF8XsY3YxeDYVolq3G-Bc_avyCKLkypP5NnEIsdnlz_YDPpdEnhZq-5AS7Cni88nOkR9w_AzXEld8cjyw1OSYy8RUHYJp0WfcCuuQkWdnynlMmhuWHtws6C9Pbn4ZuWpTZ0eUemOkXXTCfCFc0Io79CuoXca9lhCwlS37aolmTKYqfa5OpE4fVkTJeH4uGy7C01VSqi_XifRNhzNavdkKn6GW7b1sj-RNxxb04SujeLjRpwYVBGLwbeBtCH0dYFbUswPoe8LgDBqq3yvP7QS181afK5ziOAqw1a9XCHn_Qb9C36xxfRiSg8KAgTg83UBKigLjS5LkiBOnjLRFYilVQC6RfUPnpOoJ2NKtDzKJxKPLrGrhQImBuCof6g6YzahwvacLudI8yqKfbiIu_OrIV4N_I9LFYk8fUgN_9qPy8cIjoSBO-EKMpbk5GfEZQDAjVSXtZka80M8IPxB_0ibgflPhPs9_vnBkldKQoII2yrAPLPJ0ugWcUk7Mvm9A8F8MxZwodS6wQjsAkbvz7aI5-Yh3rm9g9iTAzcjadHnCGclib7wxi7P73MjizSjrddXY98dMyu4T_IodHjelaGBF6alofFqBAZAz7VftvJQCpNA_n9Ei4nz61H_-AvvawdxJcnGdZbseffycMoyudKxqlVppvT7mVOjgotYUox0Ks",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDk3MzYyNzMsImV4cCI6MTY0OTczOTg3Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY3VzdG9tZXIxQGFiYy1jb21wYW55LmNvbSJ9.AgF8XsY3YxeDYVolq3G-Bc_avyCKLkypP5NnEIsdnlz_YDPpdEnhZq-5AS7Cni88nOkR9w_AzXEld8cjyw1OSYy8RUHYJp0WfcCuuQkWdnynlMmhuWHtws6C9Pbn4ZuWpTZ0eUemOkXXTCfCFc0Io79CuoXca9lhCwlS37aolmTKYqfa5OpE4fVkTJeH4uGy7C01VSqi_XifRNhzNavdkKn6GW7b1sj-RNxxb04SujeLjRpwYVBGLwbeBtCH0dYFbUswPoe8LgDBqq3yvP7QS181afK5ziOAqw1a9XCHn_Qb9C36xxfRiSg8KAgTg83UBKigLjS5LkiBOnjLRFYilVQC6RfUPnpOoJ2NKtDzKJxKPLrGrhQImBuCof6g6YzahwvacLudI8yqKfbiIu_OrIV4N_I9LFYk8fUgN_9qPy8cIjoSBO-EKMpbk5GfEZQDAjVSXtZka80M8IPxB_0ibgflPhPs9_vnBkldKQoII2yrAPLPJ0ugWcUk7Mvm9A8F8MxZwodS6wQjsAkbvz7aI5-Yh3rm9g9iTAzcjadHnCGclib7wxi7P73MjizSjrddXY98dMyu4T_IodHjelaGBF6alofFqBAZAz7VftvJQCpNA_n9Ei4nz61H_-AvvawdxJcnGdZbseffycMoyudKxqlVppvT7mVOjgotYUox0Ks",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "quantity",
+							"value": "13",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Turkey 2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDk3MzYyNzMsImV4cCI6MTY0OTczOTg3Mywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY3VzdG9tZXIxQGFiYy1jb21wYW55LmNvbSJ9.AgF8XsY3YxeDYVolq3G-Bc_avyCKLkypP5NnEIsdnlz_YDPpdEnhZq-5AS7Cni88nOkR9w_AzXEld8cjyw1OSYy8RUHYJp0WfcCuuQkWdnynlMmhuWHtws6C9Pbn4ZuWpTZ0eUemOkXXTCfCFc0Io79CuoXca9lhCwlS37aolmTKYqfa5OpE4fVkTJeH4uGy7C01VSqi_XifRNhzNavdkKn6GW7b1sj-RNxxb04SujeLjRpwYVBGLwbeBtCH0dYFbUswPoe8LgDBqq3yvP7QS181afK5ziOAqw1a9XCHn_Qb9C36xxfRiSg8KAgTg83UBKigLjS5LkiBOnjLRFYilVQC6RfUPnpOoJ2NKtDzKJxKPLrGrhQImBuCof6g6YzahwvacLudI8yqKfbiIu_OrIV4N_I9LFYk8fUgN_9qPy8cIjoSBO-EKMpbk5GfEZQDAjVSXtZka80M8IPxB_0ibgflPhPs9_vnBkldKQoII2yrAPLPJ0ugWcUk7Mvm9A8F8MxZwodS6wQjsAkbvz7aI5-Yh3rm9g9iTAzcjadHnCGclib7wxi7P73MjizSjrddXY98dMyu4T_IodHjelaGBF6alofFqBAZAz7VftvJQCpNA_n9Ei4nz61H_-AvvawdxJcnGdZbseffycMoyudKxqlVppvT7mVOjgotYUox0Ks",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/order/1",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
